@@ -6,17 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build Your Dream Team</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Manrope:wght@400;500;600;700;800&display=swap");
+    </style>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               clifford: "#da373d",
+              prOrange: "#FF5E19",
+              secondbg: "#151515",
+              textSec: "#B3B3B3",
+              btnBg: "#015196",
+              btnBgD: "#A2A9AF",
+              cardBorder: "#434343",
+              cardBg: "#0D0D0D",
+            },
+            fontFamily: {
+              swash: "'Berkshire Swash', cursive;",
+              manrope: "'Manrope', sans-serif;",
             },
           },
         },
       };
     </script>
   </head>
-  <body></body>
+  <body>
+    <h1 class="font-manrope text-5xl text-center">Web development</h1>
+  </body>
 </html>
