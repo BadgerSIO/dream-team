@@ -1,6 +1,5 @@
-function addNametolist(id) {
-  const newListitem = document.createElement("li");
-  newListitem.innerHTML = "valuefromp";
-  document.getElementById(id).appendChild(newListitem);
+function getname(elem) {
+  const div = elem.parentNode;
+  const secondChild = div.childNodes[1];
+  console.log(secondChild.innerText);
 }
-addNametolist(["playerList"]);
