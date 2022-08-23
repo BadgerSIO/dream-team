@@ -1,11 +1,25 @@
+/**
+ * -----------------------------------
+ * Utility Function
+ * -----------------------------------
+ */
+//get input values and innerText
 function getNumbers(id, text, inputs) {
   if (text) {
     const number = parseFloat(document.getElementById(id).innerText);
     return number;
   } else if (inputs) {
-    const number = parseFloat(document.getElementById(id).value);
+    const checkNum = document.getElementById(id).value;
+    if (isNaN(checkNum)) {
+      return checkNum;
+    }
+    const number = parseFloat(checkNum);
     return number;
   }
+}
+//seting values to empty
+function setValEmpty(valueId) {
+  document.getElementById(valueId).value = "";
 }
 /**
  * -----------------------------------
@@ -64,18 +78,30 @@ document
     const expensesPlayerOnly = getNumbers("playerExpense", true, false);
     const managerCost = getNumbers("managerCost", false, true);
     const coachCost = getNumbers("coachCost", false, true);
-    if (isNaN(expensesPlayerOnly) || isNaN(managerCost) || isNaN(coachCost)) {
-      if (isNaN(expensesPlayerOnly) || expensesPlayerOnly == 0) {
+    //validation
+    if (
+      isNaN(expensesPlayerOnly) ||
+      expensesPlayerOnly == 00 ||
+      isNaN(managerCost) ||
+      isNaN(coachCost)
+    ) {
+      if (isNaN(expensesPlayerOnly) || expensesPlayerOnly == 00) {
         alert("Calculate the expense of players first");
-        document.getElementById("managerCost").value = "";
+        setValEmpty("managerCost");
+        setValEmpty("coachCost");
+        return;
+      } else if (isNaN(coachCost) && isNaN(managerCost)) {
+        alert("invalid Inputs");
+        setValEmpty("coachCost");
+        setValEmpty("managerCost");
         return;
       } else if (isNaN(coachCost)) {
         alert("invalid coach cost Input");
-        document.getElementById("coachCost").value = "";
+        setValEmpty("coachCost");
         return;
       } else if (isNaN(managerCost)) {
         alert("invalid manager cost Input");
-        document.getElementById("managerCost").value = "";
+        setValEmpty("managerCost");
         return;
       }
       return;

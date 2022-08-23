@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build Your Dream Team</title>
+    <title>My Greatest Five</title>
+    <!-- tailwindcss cdn link  -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts link  -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Manrope:wght@400;500;600;700;800&display=swap");
     </style>
+    <!-- tailwindcss custom css styles  -->
     <script>
       tailwind.config = {
         theme: {
@@ -37,50 +40,72 @@
   </head>
   <body class="font-manrope">
     <header>
+      <!-- 
+        hero section start
+        -->
       <section id="heroSection" class="md:h-[480px] bg-black relative">
         <div class="headerleftimg absolute left-0 bottom-0">
-          <img src="images/headerLeftMbappe.png" class="" alt="" />
-        </div>
-        <div class="headerleftimg absolute right-0 bottom-0">
-          <img src="images/footballRightHeader.png" class="" alt="" />
-        </div>
-        <div class="container h-full relative px-4 flex flex-row items-center">
           <img
-            src="images/Card-psg.png"
-            class="absolute top-5 right-0"
+            src="images/headerLeftMbappe.png"
+            class="w-40 md:w-full"
             alt=""
           />
-          <div class="px-10">
+        </div>
+        <div class="headerleftimg absolute right-0 bottom-0">
+          <img
+            src="images/footballRightHeader.png"
+            class="w-40 md:w-full"
+            alt=""
+          />
+        </div>
+        <div
+          class="container h-full relative px-4 flex flex-row items-center py-10 md:py-0"
+        >
+          <img
+            src="images/Card-psg.png"
+            class="absolute top-5 right-0 hidden md:inline-block"
+            alt=""
+          />
+          <div
+            class="md:px-10 backdrop-blur md:backdrop-blur-none rounded bg-black/50 md:bg-transparent p-4"
+          >
             <h2
-              class="heroHeading text-7xl font-swash capitalize text-prOrange text-center pb-5 relative"
+              class="heroHeading text-3xl md:text-5xl lg:text-7xl font-swash capitalize text-prOrange text-center pb-5 relative"
             >
-              Select Your Best Five<span
+              Build your dream team<span
                 ><img
                   src="images/Line Marker.svg"
                   alt=""
-                  class="absolute right-1/3"
+                  class="absolute right-1/3 w-28 md:w-auto"
               /></span>
             </h2>
 
             <p
-              class="text-center text-white font-manrope text-xl font-medium pt-5 w-9/12 mx-auto"
+              class="text-center text-white font-manrope text-sm md:text-xl font-medium md:pt-5 pt-3 w-9/12 mx-auto"
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Exercitationem dignissimos cupiditate, molestias placeat molestiae
-              eveniet neque corporis nisi autem ab fuga distinctio perferendis,
-              sapiente veritatis deleniti, pariatur aliquid beatae? Expedita
-              assumenda porro labore facilis rem beatae eum illum error modi.
+              <span class="hidden md:inline"
+                >GreatestFive.com is an online formation creator app for soccer
+                lovers.</span
+              >
+              Create your own football team with our squad builder. Calculate
+              your team building budget
             </p>
           </div>
         </div>
       </section>
+      <!-- 
+        hero section end
+        -->
     </header>
     <main>
+      <!-- 
+        Players section start
+        -->
       <section id="playerCards" class="py-14 bg-secondbg">
-        <div class="container px-4">
-          <div class="grid grid-cols-4 gap-5">
-            <div class="cards col-span-3">
-              <div class="grid grid-cols-3 gap-5">
+        <div class="container px-4 md:px-2">
+          <div class="grid lg:grid-cols-4 gap-5">
+            <div class="cards lg:col-span-3">
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div
                   class="card group bg-cardBg border border-cardBorder overflow-hidden"
                 >
@@ -93,12 +118,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Lionel Messi
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      750 Goals&nbsp&nbsp:&nbsp&nbsp654 assists
                     </h3>
                     <button
                       class="cardBtn w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90 disabled:bg-gray-500;"
@@ -118,12 +143,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Neymar Jr
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      500 Goals&nbsp&nbsp:&nbsp&nbsp320 assists
                     </h3>
                     <button
                       class="w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90"
@@ -143,12 +168,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Kylian Mbappé
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      200 Goals&nbsp&nbsp:&nbsp&nbsp150assists
                     </h3>
                     <button
                       class="w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90"
@@ -168,12 +193,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Vítor Machado
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      255 Goals&nbsp&nbsp:&nbsp&nbsp230 assists
                     </h3>
                     <button
                       class="w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90"
@@ -193,12 +218,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Sergio Ramos
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      231 Goals&nbsp&nbsp:&nbsp&nbsp343 assists
                     </h3>
                     <button
                       class="w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90"
@@ -218,12 +243,12 @@
                   </div>
                   <div class="cardBody p-5">
                     <h2
-                      class="playerName text-2xl text-center text-white font-black"
+                      class="playerName text-lg md:text-2xl text-center text-white font-black"
                     >
                       Renato Sanches
                     </h2>
                     <h3 class="text-center text-base text-textSec py-4">
-                      500 Goals&nbsp&nbsp:&nbsp&nbsp120assists
+                      342 Goals&nbsp&nbsp:&nbsp&nbsp123 assists
                     </h3>
                     <button
                       class="w-full bg-btnBg px-5 text-white py-2 text-base font-bold uppercase hover:bg-btnBg/90"
@@ -235,36 +260,36 @@
                 </div>
               </div>
             </div>
-            <div class="calculations col-span-1 relative">
-              <div class="selectedPlayers p-5 bg-cardBg">
+            <div class="calculations lg:col-span-1 relative">
+              <div class="selectedPlayers p-5 bg-cardBg 2xl:sticky top-5">
                 <h1
                   class="text-center text-white font-semibold text-2xl relative"
                 >
                   Selected - V<span
                     ><img
                       src="images/headingUnderLine2.svg"
-                      class="absolute left-1/4 top-full"
+                      class="absolute hidden lg:inline-block lg:left-5 xl:left-1/4 top-full"
                       alt=""
                   /></span>
                 </h1>
                 <ol
-                  class="text-white p-5 list-decimal text-xl mt-3 pl-5 marker:text-textSec marker:font-bold"
+                  class="text-white p-5 list-decimal text-lg xl:text-xl mt-3 pl-5 marker:text-textSec marker:font-black marker:text-xl"
                   id="playerList"
                 ></ol>
               </div>
-              <div class="budgetCalc p-5 bg-cardBg mt-5 sticky top-10">
+              <div class="budgetCalc p-5 bg-cardBg mt-5 2xl:sticky top-80">
                 <h1
                   class="text-center text-white font-semibold text-2xl relative"
                 >
                   Budget<span
                     ><img
                       src="images/headingUnderLine2.svg"
-                      class="absolute left-1/4 top-full"
+                      class="absolute hidden lg:inline-block lg:left-5 xl:left-1/4 top-full"
                       alt=""
                   /></span>
                 </h1>
                 <div class="calculations grid grid-cols-2 mt-10">
-                  <h2 class="perPlayer text-textSec pt-2 text-xl">
+                  <h2 class="perPlayer text-textSec pt-2 text-base xl:text-lg">
                     Per Player
                   </h2>
                   <input
@@ -278,17 +303,23 @@
                   >
                     Calculate
                   </button>
-                  <h2 class="text-textSec pt-2 text-xl">Player Expenses</h2>
-                  <h3 class="text-white pt-2 text-right text-2xl">
+                  <h2 class="text-textSec pt-2 text-base xl:text-lg">
+                    Player Expenses
+                  </h2>
+                  <h3 class="text-white pt-2 text-right text-xl xl:text-2xl">
                     $<span id="playerExpense">00</span>
                   </h3>
-                  <h2 class="text-textSec pt-2 text-xl my-3">Manager</h2>
+                  <h2 class="text-textSec pt-2 text-base xl:text-lg my-3">
+                    Manager
+                  </h2>
                   <input
                     type="text"
                     id="managerCost"
                     class="bg-transparent border border-white text-white p-2 my-3"
                   />
-                  <h2 class="text-textSec pt-2 text-xl my-3">Coach</h2>
+                  <h2 class="text-textSec pt-2 text-base xl:text-lg my-3">
+                    Coach
+                  </h2>
                   <input
                     type="text"
                     id="coachCost"
@@ -300,8 +331,8 @@
                   >
                     Calculate Total
                   </button>
-                  <h2 class="text-textSec pt-2 text-xl">Total</h2>
-                  <h3 class="text-prOrange pt-2 text-right text-2xl">
+                  <h2 class="text-textSec pt-2 text-lg">Total</h2>
+                  <h3 class="text-prOrange pt-2 text-right text-xl xl:text-2xl">
                     $<span id="totalCost">00</span>
                   </h3>
                 </div>
@@ -310,8 +341,24 @@
           </div>
         </div>
       </section>
-      <section class="h-screen"></section>
+      <!-- 
+        Players section end
+        -->
     </main>
+    <!-- 
+        footer section start
+        -->
+    <footer class="bg-secondbg border-t-[1px] border-gray-500 py-5 md:py-10">
+      <div class="container px-4">
+        <h2 class="text-center text-sm md:text-base text-white font-medium">
+          Copyright @ 2022 All Rights Reserved.
+        </h2>
+      </div>
+    </footer>
+    <!-- 
+        footer section end
+        -->
+    <!-- my javascript file      -->
     <script src="js/app.js"></script>
   </body>
 </html>
