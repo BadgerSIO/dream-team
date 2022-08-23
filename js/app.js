@@ -1,3 +1,12 @@
+function getNumbers(id, text, inputs) {
+  if (text) {
+    const number = parseFloat(document.getElementById(id).innerText);
+    return number;
+  } else if (inputs) {
+    const number = parseFloat(document.getElementById(id).value);
+    return number;
+  }
+}
 /**
  * -----------------------------------
  * Top 5 Player Selection
@@ -25,7 +34,7 @@ function getname(elem) {
  * -----------------------------------
  */
 document.getElementById("calculateEx").addEventListener("click", function () {
-  const perplayerEx = parseFloat(document.getElementById("perplayerEx").value);
+  const perplayerEx = getNumbers("perplayerEx", false, true);
   const playerList = document.getElementById("playerList");
   const getLength = playerList.childNodes.length;
   if (isNaN(perplayerEx) || getLength <= 0) {
@@ -48,20 +57,27 @@ document.getElementById("calculateEx").addEventListener("click", function () {
  * -----------------------------------
  *
  */
+
 document
   .getElementById("calculateTotal")
   .addEventListener("click", function () {
-    const expensesPlayerOnly = parseFloat(
-      document.getElementById("playerExpense").innerText
-    );
-    const managerCost = parseFloat(
-      document.getElementById("managerCost").value
-    );
-    const coachCost = parseFloat(document.getElementById("coachCost").value);
+    const expensesPlayerOnly = getNumbers("playerExpense", true, false);
+    const managerCost = getNumbers("managerCost", false, true);
+    const coachCost = getNumbers("coachCost", false, true);
     if (isNaN(expensesPlayerOnly) || isNaN(managerCost) || isNaN(coachCost)) {
-      alert("invalid Input");
-      document.getElementById("managerCost").value = "";
-      document.getElementById("coachCost").value = "";
+      if (isNaN(expensesPlayerOnly)) {
+        alert("Calculate the expense of players first");
+        document.getElementById("managerCost").value = "";
+        return;
+      } else if (isNaN(managerCost)) {
+        alert("invalid manager cost Input");
+        document.getElementById("managerCost").value = "";
+        return;
+      } else if (isNaN(coachCost)) {
+        alert("invalid coach cost Input");
+        document.getElementById("coachCost").value = "";
+        return;
+      }
       return;
     }
     const totalexpenses = expensesPlayerOnly + managerCost + coachCost;
